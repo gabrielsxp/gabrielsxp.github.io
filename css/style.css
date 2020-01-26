@@ -405,6 +405,9 @@ nav {
     height: auto;
     margin: 10;
   }
+  .upButton {
+    right: 20%;
+  }
 }
 @-moz-keyframes navStaticAnimation {
   from {
