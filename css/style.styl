@@ -1,0 +1,377 @@
+@import "reset.css"
+
+//paleta de cores: https://coolors.co/e63946-f1faee-a8dadc-457b9d-1d3557
+fontSize = 14px
+headerIconSize = 2.5em
+font = fontSize "Roboto"
+gradientColorOne = #1D3557
+gradientColorTwo = #E63946
+mainGradient = linear-gradient(0deg, gradientColorOne 0%, gradientColorTwo 75%)
+gradientFontColor = #fff
+minPadding = 80px
+appBarMainColor = #45B69C
+appBarFontColor = #94E8B4
+navColor = #1f334f
+navBorderColor = #457B9D
+navBorder = 3px solid navBorderColor
+chevronAnimationName = point
+
+html
+    scroll-behavior: smooth;
+
+body
+    overflow-x: hidden
+
+body ,
+::after
+    font: font, sans-serif
+    box-sizing: border-box
+h2
+    font-size: 3em
+    font-weight: bold
+h4
+    font-size: 1.5em
+section
+    min-height 100vh
+    padding: minPadding 20px
+    color: #333
+.mid-section
+    margin-top: 20px
+    width: 100%
+
+header
+    background: mainGradient
+    height: 100vh
+    width: 100%
+    overflow: none
+    display: flex
+    justify-content: center
+    align-items: center
+    text-align: center
+    @media (max-width: 600px)
+        text-align: center
+header h2, header h4
+    color: gradientFontColor!important
+header .content
+    padding: 1.25rem
+header .fa-angle-double-down
+    position: absolute
+    left: 50%
+    opacity 0
+    bottom: 0%
+    padding-bottom: 20px
+    font-size: headerIconSize
+    color: gradientFontColor
+    animation: point 2s ease-in-out infinite
+    cursor: pointer
+
+nav
+    background-color: navColor
+    border-bottom: navBorder
+    z-index: 990
+    height: 50px
+    width: 100%
+    opacity 0
+.fixed
+    position: fixed
+    bottom: inherit
+    top: 0
+    left: 0
+    opacity 1
+    transition all 0.3s
+    animation: navStaticAnimation 0.5s ease
+.static
+    position: relative 
+    opacity: 1
+    transition all 0.3s
+.nav-content
+    display: flex
+    flex-wrap: no-wrap
+    padding: 20px
+
+.nav-content ul 
+    display: flex
+    align-items: center
+
+.nav-content ul li a
+    margin-right: 30px
+    font-size: fontSize + 1em
+    cursor: pointer
+    color: gradientFontColor
+    text-decoration: none
+    transition: all 0.5s
+.nav-content ul li a:hover
+    color: gradientColorTwo
+
+.nav-content .selected
+    color: gradientColorTwo
+#quem-sou-eu .container
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    margin-top: 20px
+#quem-sou-eu p 
+    font-size: 1.25em
+    margin-bottom: 10px
+    text-align: justify
+#quem-sou-eu hr,
+#projetos hr,
+#codepen hr
+    border: 2px solid gradientColorTwo
+    max-width: 4em
+    margin: 10px auto 20px auto
+#quem-sou-eu .description
+    display: flex
+    flex-direction: column
+#quem-sou-eu .description ul
+    list-style: circle
+#quem-sou-eu .description li 
+    font-size: 1.25em
+    margin-left 20px
+    margin-bottom: 10px
+#quem-sou-eu .skills
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    margin-top: 20px
+    justify-content: space-between
+    padding: 5px
+    flex-grow 1
+    width: 100%
+#quem-sou-eu .skill
+    position: relative
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    text-align: center
+    box-shadow: 0 5px 5px 0 rgba(233,240,243,0.5), 0 0 0 1px #E6ECF8
+    padding: 20px
+    height: 150px
+    width: 350px
+    margin-bottom: 20px;
+    margin-right: 20px
+    cursor: pointer
+#quem-sou-eu .baloon
+    position: relative
+#quem-sou-eu .baloon::after
+    z-index: 2
+    width: 112%
+    content: attr(data-tooltip)
+    padding: 20px
+    box-shadow: 0 5px 5px 0 rgba(233,240,243,0.5), 0 0 0 1px #E6ECF8
+    position: absolute
+    left: 50%
+    transform: translateX(-50%) translateY(20px)
+    background-color: gradientColorTwo
+    color: gradientFontColor
+    box-sizing: border-box
+    visibility: hidden
+#quem-sou-eu .baloon::before
+    z-index: 3
+    content: ''
+    width: 0
+    height: 0
+    border-left: 12px solid transparent
+    border-right: 12px solid transparent
+    position: absolute 
+    left: 50%
+    transform: translateX(-50%) translateY(10px)
+    border-bottom: 12px solid gradientColorTwo;
+    visibility: hidden
+#quem-sou-eu .skill:hover .baloon::before,
+#quem-sou-eu .skill:hover .baloon::after
+    visibility: visible
+#quem-sou-eu h5
+    font-weight: bold
+#quem-sou-eu .skill p 
+    text-align: center
+#quem-sou-eu .skill .tech
+    display: flex
+    flex-direction: column
+#quem-sou-eu .skill .fab
+    font-size: 2.5em
+    color: gradientColorTwo
+    margin-bottom: 10px
+#projetos
+    padding: minPadding
+    background-color: #dedede
+#projetos h2,
+#quem-sou-eu h2,
+#codepen h2
+    text-align: center
+#projetos .grid
+    display: flex
+    flex-wrap: wrap
+    width: 100%
+#projetos .grid-element
+    position: relative
+    height: 250px
+    width: 390px
+    cursor: pointer
+    overflow: hidden
+#projetos .card
+    position: relative
+    width: 100%
+    height: 100%
+    transition: all 0.5s
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-direction column
+#projetos .kofas
+    background: url('./../img/kofas.jpg')
+    background-position: center 
+    background-repeat: no-repeat
+    background-size: cover
+#projetos .jm
+    background: url('./../img/jm.jpg')
+    background-position: center
+    background-repeat: no-repeat
+    background-size: cover
+#projetos .building
+    background: url('./../img/building.jpg')
+    background-position: center
+    background-repeat: no-repeat
+    background-size: cover
+#projetos .dude
+    background: url('./../img/paymedude.jpg')
+    background-position: center
+    background-repeat: no-repeat
+    background-size: cover
+#projetos .card .content
+    position: relative
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    padding: 20px
+    z-index: 2
+    visibility: hidden
+
+#projetos .card h5,
+#projetos .card p
+    text-align: center
+    transform: translateY(-50px)
+    transition: all 0.6s
+    opacity: 0
+#projetos .card h5
+    color: gradientColorTwo
+#projetos .card p 
+    color: gradientColorOne
+    margin-top: 5px
+
+#projetos .card .content a
+    padding: 15px 7px
+    background-color: transparent
+    color: gradientColorTwo
+    border: 3px solid gradientColorTwo
+    transition: all 0.6s
+    margin-top: 20px
+    transform: translateY(50px)
+    opacity: 0
+    cursor: pointer
+    text-decoration: none
+    text-align: center
+#projetos .card .content a:hover
+    background-color: gradientColorTwo
+    transition: all 0.2s
+    color: gradientFontColor
+
+
+#projetos .card::before 
+    content: ''
+    width: 100%
+    height: 100%
+    background-color: #dedede
+    position: absolute
+    top: 0
+    left: 0
+    visibility: hidden
+    transition: all 0.3s
+#projetos .grid-element:hover .card,
+#projetos .grid-element:focus .card
+    transform: scale(1.2)
+#projetos .grid-element:hover .content
+    visibility: visible
+#projetos .grid-element:hover .content h5,
+#projetos .grid-element:hover .content p
+    transform: translateY(0px)
+    opacity: 1
+#projetos .grid-element:hover .content a
+    transform: translateY(0px)
+    opacity: 1
+#projetos .grid-element:hover .card:before
+    visibility: visible
+#codepen
+    padding: minPadding
+#codepen h4
+    font-weight: bold
+    margin-top: 15px
+#footer
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: column
+    width: 100%
+    background-color: gradientColorOne
+    color: gradientFontColor
+    padding: 20px
+#footer p 
+    font-size: 1.25em
+#footer a 
+    color: gradientFontColor
+    border: 3px solid gradientFontColor
+    padding: 7px
+    width: 30px
+    height: 30px
+    text-decoration: none
+    line-height 30px
+    display: block
+    font-size 1.5em
+    transition: all 0.3s
+    margin-top: 15px
+    text-align: center
+#footer a:hover
+    border-color: gradientColorTwo
+    color: gradientColorTwo
+.upButton
+    background-color: gradientColorTwo
+    width: 50px
+    height: 50px
+    color: gradientFontColor
+    line-height 50px
+    border-radius: 50%
+    position: fixed
+    bottom: 30px
+    right: 30px
+    text-align: center
+    text-decoration: none
+    opacity: 1
+    z-index: 999
+    transition: all 0.5s
+.fadeDown
+    opacity: 0
+@media (max-width: 545px)
+    #quem-sou-eu .skills
+        justify-content: center
+    #projetos .grid
+        justify-content: center
+        align-items: center
+        width: 100%
+        flex: 1
+    #projetos .grid-element .card
+        width: 100%
+        height: auto
+        margin: 10
+@keyframes navStaticAnimation
+    from
+        opacity 0
+    to
+        opacity 1
+@keyframes chevronAnimationName
+    for i in 0..5
+        {10% * i}
+            opacity: (i / 10)
+            transform: translateY(i px)
+    
+
+

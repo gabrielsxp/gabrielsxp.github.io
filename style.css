@@ -1,0 +1,181 @@
+@import "reset.css";
+body {
+  font: 14px "Roboto", sans-serif;
+  box-sizing: border-box;
+}
+h2 {
+  font-size: 3em;
+  font-weight: bold;
+}
+h4 {
+  font-size: 1.5em;
+}
+section {
+  padding: 80px 20px;
+  color: #333;
+}
+header {
+  background: linear-gradient(0deg, #1d3557 0%, #e63946 75%);
+  height: 100vh;
+  width: 100%;
+  overflow: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+}
+@media (max-width: 600px) {
+  header {
+    text-align: center;
+  }
+}
+header .content {
+  color: #fff;
+  padding: 1.25rem;
+}
+header .fa-angle-double-down {
+  position: absolute;
+  left: 50%;
+  opacity: 0;
+  bottom: 0%;
+  padding-bottom: 20px;
+  font-size: 2.5em;
+  color: #fff;
+  animation: point 2s ease-in-out infinite;
+  cursor: pointer;
+}
+nav {
+  background-color: #1f334f;
+  color: #fff;
+  display: fixed;
+  border-bottom: 3px solid #457b9d;
+}
+.nav-content {
+  display: flex;
+  flex-wrap: no-wrap;
+  padding: 20px;
+}
+.nav-content ul {
+  display: flex;
+  align-items: center;
+}
+.nav-content ul li {
+  margin-right: 30px;
+  fontSize: 15px;
+  cursor: pointer;
+}
+.selected {
+  color: #e63946;
+}
+#quem-sou-eu h2 {
+  text-align: center;
+}
+#quem-sou-eu hr {
+  border: 2px solid #e63946;
+  max-width: 4em;
+  margin: 10px auto 20px auto;
+}
+@-moz-keyframes point {
+  0% {
+    opacity: 0;
+    transform: translateY(0px);
+  }
+  10% {
+    opacity: 0.1;
+    transform: translateY(1px);
+  }
+  20% {
+    opacity: 0.2;
+    transform: translateY(2px);
+  }
+  30% {
+    opacity: 0.3;
+    transform: translateY(3px);
+  }
+  40% {
+    opacity: 0.4;
+    transform: translateY(4px);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translateY(5px);
+  }
+}
+@-webkit-keyframes point {
+  0% {
+    opacity: 0;
+    transform: translateY(0px);
+  }
+  10% {
+    opacity: 0.1;
+    transform: translateY(1px);
+  }
+  20% {
+    opacity: 0.2;
+    transform: translateY(2px);
+  }
+  30% {
+    opacity: 0.3;
+    transform: translateY(3px);
+  }
+  40% {
+    opacity: 0.4;
+    transform: translateY(4px);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translateY(5px);
+  }
+}
+@-o-keyframes point {
+  0% {
+    opacity: 0;
+    transform: translateY(0px);
+  }
+  10% {
+    opacity: 0.1;
+    transform: translateY(1px);
+  }
+  20% {
+    opacity: 0.2;
+    transform: translateY(2px);
+  }
+  30% {
+    opacity: 0.3;
+    transform: translateY(3px);
+  }
+  40% {
+    opacity: 0.4;
+    transform: translateY(4px);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translateY(5px);
+  }
+}
+@keyframes point {
+  0% {
+    opacity: 0;
+    transform: translateY(0px);
+  }
+  10% {
+    opacity: 0.1;
+    transform: translateY(1px);
+  }
+  20% {
+    opacity: 0.2;
+    transform: translateY(2px);
+  }
+  30% {
+    opacity: 0.3;
+    transform: translateY(3px);
+  }
+  40% {
+    opacity: 0.4;
+    transform: translateY(4px);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translateY(5px);
+  }
+}

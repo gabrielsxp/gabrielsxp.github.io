@@ -1,0 +1,11 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "portfolio pessoal",
+  "main": "index.html",
+  "author": "Gabriel Soares <gabrielsxp@hotmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.12.0"
+  }
+}
